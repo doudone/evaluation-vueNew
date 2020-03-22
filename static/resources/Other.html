@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<br />
+	<div style="width:100%; text-align:center; font-family:Arial; font-size:12px;" id=other></div>
+	<br />
+	<div style="width:100%; text-align:center; font-family:Arial; font-size:12px;">
+	    <button onclick="parent.window.close();">
+		    Close
+	    </button>
+	</div>
+
+	<SCRIPT src="axurerp_pagescript.js"></SCRIPT>
+
+	<script language=javascript>
+	function getQueryconstiable(constiable) {
+      const query = window.location.hash.substring(1);
+      const consts = query.split("&&&");
+      for (const i=0;i<consts.length;i++) {
+        const pair = consts[i].split("=");
+        if (pair[0] == constiable) {
+          return decodeURI(pair[1]);
+        }
+      }
+    }
+
+	const other = document.getElementById('other');
+	other.innerHTML = getQueryconstiable('other');
+
+	</script>
+
+	</body>
+</html>

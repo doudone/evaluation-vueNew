@@ -1,0 +1,24 @@
+﻿<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+
+	<script language="javascript">
+	function getUrl() {
+      const query = window.location.hash.substring(1);
+      const consts = query.split("&&&");
+      for (const i=0;i<consts.length;i++) {
+        const url = consts[i];
+        return decodeURI(url).replace("html%23","html#");
+      }
+    }
+
+    const rel = '../';
+    const url = getUrl();
+    if (url.indexOf(":") > 0 && url.indexOf(":") < 10) rel = '';
+	self.location.href = rel + url;
+	</script>
+
+	</body>
+</html>
